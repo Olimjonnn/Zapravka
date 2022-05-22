@@ -13,6 +13,13 @@ class ClientSerializer(serializer):
         model = Client
         fields = "__all__"
 
+
+
+class ClientSerializer(serializer):
+    class Meta:
+        model = Client
+        fields = "__all__"
+
 class BenzinSerializer(serializer):
     class Meta:
         model = Benzin

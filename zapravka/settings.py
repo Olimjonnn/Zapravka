@@ -69,9 +69,12 @@ TEMPLATES = [
         },
     },
 ]
-
+AUTH_USER_MODEL = "main.User"
 WSGI_APPLICATION = 'zapravka.wsgi.application'
 
+REST_FRAMEWORK = {
+    'DATETIME_FORMAT': "%Y-%m-%d %H:%M:%S"
+}
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases

@@ -24,11 +24,13 @@ class Info(models.Model):
     telegram_link = models.CharField(max_length=500)
     instagram_link = models.CharField(max_length=500)
 
+
+
+
 class Client(models.Model):
     name = models.CharField(max_length=200)
     phone = models.IntegerField(blank=True, null=True)
-    payed  = models.IntegerField()
-    discon_card = models.IntegerField(default=0)
+    payed  = models.IntegerField(default=0)
 
     def __str__(self):
         return self.name
@@ -37,6 +39,9 @@ class Benzin(models.Model):
     name = models.CharField(max_length=10)
     price = models.IntegerField()
     quantity = models.IntegerField()
+
+    def __str__(self):
+        return self.name
 
 class BenzinProduction(models.Model):
     benzin = models.ForeignKey(Benzin, on_delete=models.CASCADE)

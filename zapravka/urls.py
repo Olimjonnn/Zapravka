@@ -21,4 +21,17 @@ from main.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path("info/", InfoView.as_view()),
+    path("info/update/<int:pk>/", InfoUpdate.as_view()),
+    path("client/", ClientView.as_view()),
+    path("client/update/<int:pk>/", ClientUpdate.as_view()),
+    path("benzin/get/", BenzinGet.as_view()),
+    path("benzin/update/<int:pk>/", BenzinUpdate.as_view()),
+    path("benzin/production/", BenzinProductionView.as_view()),
+    path("benzin/production/post/", BenzinProductionPost.as_view()),
+    path("cash/get/", CashGet.as_view()),
+    path("pay/", PayView.as_view()),
+    path("pay/client/get/", PayClientGet.as_view()),
+    path("pay/time/get/", PayTimeGet.as_view()),
+    path("news/<int:pk>/", NewsView.as_view()),
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
