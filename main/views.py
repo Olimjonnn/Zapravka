@@ -195,7 +195,9 @@ class PayView(APIView):
                     cash = Cash.objects.create(cash = int(quantity)*int(benzin.price))
                 cash.cash += int(quantity)*int(benzin.price)
                 cash.save()
-                return Response({f"Thank you for useing our oil, {benzin.name} oil, {quantity} liter successfully poured"})
+                summa = 0
+                summa += int(quantity)*int(benzin.price)
+                return Response({f"Thank you for useing our oil, {benzin.name} oil, {quantity} liter successfully poured {summa} payed"})
         except Exception as ar:
             data = {
                 'error':f"{ar}"
